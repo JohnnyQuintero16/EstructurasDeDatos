@@ -44,8 +44,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnMetodo1 = new javax.swing.JButton();
         btnMetodo2 = new javax.swing.JButton();
-        btnMetodo3 = new javax.swing.JButton();
         btnMetodo4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal-Sistema Notas");
@@ -88,17 +88,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnMetodo3.setText("Metodo 3");
-        btnMetodo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMetodo3ActionPerformed(evt);
-            }
-        });
-
         btnMetodo4.setText("Metodo 4");
         btnMetodo4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMetodo4ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Metodo 3");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -123,8 +123,8 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(btnMetodo1)
                                 .addGap(35, 35, 35)
                                 .addComponent(btnMetodo2)
-                                .addGap(30, 30, 30)
-                                .addComponent(btnMetodo3)
+                                .addGap(34, 34, 34)
+                                .addComponent(jButton1)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnMetodo4))))
                     .addGroup(layout.createSequentialGroup()
@@ -147,8 +147,8 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(btnCargarNotas)
                             .addComponent(btnMetodo1)
                             .addComponent(btnMetodo2)
-                            .addComponent(btnMetodo3)
-                            .addComponent(btnMetodo4))))
+                            .addComponent(btnMetodo4)
+                            .addComponent(jButton1))))
                 .addGap(27, 27, 27)
                 .addComponent(btnMostrarNotas)
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -183,15 +183,15 @@ public class Principal extends javax.swing.JFrame {
         this.txtEntrada.setText(this.notas.reprobaron());
     }//GEN-LAST:event_btnMetodo2ActionPerformed
 
-    private void btnMetodo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo3ActionPerformed
-        // TODO add your handling code here:
-        this.txtEntrada.setText(this.notas.cantidadQuices());
-    }//GEN-LAST:event_btnMetodo3ActionPerformed
-
     private void btnMetodo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo4ActionPerformed
         // TODO add your handling code here:
         this.txtEntrada.setText(this.notas.notaDefinitva());
     }//GEN-LAST:event_btnMetodo4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        txtEntrada.setText(notas.mostrarCantQuices());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,9 +232,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarNotas;
     private javax.swing.JButton btnMetodo1;
     private javax.swing.JButton btnMetodo2;
-    private javax.swing.JButton btnMetodo3;
     private javax.swing.JButton btnMetodo4;
     private javax.swing.JButton btnMostrarNotas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -6,6 +6,7 @@
 package Negocio;
 
 import Modelo.Estudiante;
+import java.util.Arrays;
 
 /**
  *
@@ -73,12 +74,15 @@ public class SistemaNotas {
     3.Mostrar los estudiantes (codigo y notas) ordenados por la 
     cantidad de quices que presento (forma ascendente)
     */
-   public String cantidadQuices() {
-        String msg = "Cantidad De Quices De Cada Estudiante\n";
-         float can[]=new float[estudiantes.length];
-        for(Estudiante dato:this.estudiantes){
-            can=dato.getNotas();
-            msg+=can.length+"\n";
+   public String mostrarCantQuices(){
+        Estudiante quices[] = organizarQuices();
+        String msg = "Cantidad De Quices Por Cada Estudiante\n";
+        for (Estudiante quice : quices) {
+            msg += quice.getCodigo() + " ---> ";
+            for (int j = 0; j < quice.getNotas().length; j++) {
+                msg += quice.getNotas()[j] + "; ";
+            }
+            msg += "\n";
         }
         return msg;
     }
@@ -89,12 +93,13 @@ public class SistemaNotas {
    */
    public String notaDefinitva(){
        String msg="Nota Definitiva De los Estudiantes\n";
-       Estudiante prome[]= new Estudiante[estudiantes.length];
-       prome=organizarPromedio();
-       int i=prome.length-1;
+       Estudiante prome[]=organizarPromedio();
        for(Estudiante dato:prome){
-           msg+=dato.getCodigo()+" "+prome[i].calcularPromedio()+"\n";
-           i--;
+           msg+=dato.getNotas()+" --> ";
+           for(int i=0;i<dato.getNotas().length;i++){
+               msg+=dato.getNotas()[i]+"; ";
+           }
+           msg+="\n";
        }
        return msg;
    }
@@ -116,23 +121,27 @@ public class SistemaNotas {
     //Metodo para organizar los promedios
     public Estudiante[] organizarPromedio(){
         Estudiante prome[]=estudiantes;
-        for (int i = 0; i < estudiantes.length-1; i++) {
-            if(estudiantes[i].calcularPromedio()>estudiantes[i+1].calcularPromedio()){
-                Estudiante otro = prome[i];
-                prome[i]=prome[i+1];
-                prome[i+1]=otro;
+        for(Estudiante estudiante: estudiantes){
+            for (int j = 0; j < estudiantes.length-1; j++) {
+                 if(estudiantes[j].calcularPromedio()>estudiantes[j+1].calcularPromedio()){
+                Estudiante otro = prome[j];
+                prome[j]=prome[j+1];
+                prome[j+1]=otro;
+            }
             }
         }
         return prome;
     }
     //Metodo para organizar los quices
     public Estudiante[] organizarQuices(){
-        Estudiante quices[]=estudiantes;
-        for(int i=0;i<estudiantes.length-1;i++){
-            if(estudiantes[i].getNotas().length>estudiantes[i+1].getNotas().length){
-                Estudiante otro=quices[i];
-                quices[i]=quices[i+1];
-                quices[i+1]=otro;
+        Estudiante quices[]=this.estudiantes;
+        for (Estudiante estudiante : estudiantes) {
+            for (int j = 0; j < estudiantes.length-1; j++) {
+                if(estudiantes[j].getNotas().length>estudiantes[j+1].getNotas().length){
+                    Estudiante otro=quices[j];
+                    quices[j]=quices[j+1];
+                    quices[j+1]=otro;
+                }  
             }
         }
         return quices;
