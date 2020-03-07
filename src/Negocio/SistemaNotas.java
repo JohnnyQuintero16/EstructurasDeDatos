@@ -99,7 +99,6 @@ public class SistemaNotas {
        return msg;
    }
    
-   
    /*
    Metodo:
    5.Mostrar los estudiantes (codgo y notas) que aprobaron todos sus quices
@@ -114,7 +113,6 @@ public class SistemaNotas {
         return msg;
     }
 
- 
     //Metodo para organizar los promedios
     public Estudiante[] organizarPromedio(){
         Estudiante prome[]=estudiantes;
@@ -126,5 +124,17 @@ public class SistemaNotas {
             }
         }
         return prome;
+    }
+    //Metodo para organizar los quices
+    public Estudiante[] organizarQuices(){
+        Estudiante quices[]=estudiantes;
+        for(int i=0;i<estudiantes.length-1;i++){
+            if(estudiantes[i].getNotas().length>estudiantes[i+1].getNotas().length){
+                Estudiante otro=quices[i];
+                quices[i]=quices[i+1];
+                quices[i+1]=otro;
+            }
+        }
+        return quices;
     }
 }
