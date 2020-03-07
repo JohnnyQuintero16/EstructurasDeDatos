@@ -6,7 +6,6 @@
 package Negocio;
 
 import Modelo.Estudiante;
-import java.util.Arrays;
 
 /**
  *
@@ -95,8 +94,10 @@ public class SistemaNotas {
    public String notaDefinitva(){
        String msg="Nota Definitiva De los Estudiantes \n";
        Estudiante promedios[]=organizarPromedio();
+       int i=promedios.length-1;
         for (Estudiante promedio : promedios) {
-            msg += promedio.getCodigo() + " --> " + promedio.calcularPromedio() + "\n";
+            msg += promedio.getCodigo() + " --> " + promedios[i].calcularPromedio() + "\n";
+            i--;
         }
        return msg;
    }
