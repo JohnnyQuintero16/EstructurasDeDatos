@@ -58,9 +58,8 @@ public class Estudiante {
     //metodo para contar la cantidad de quices
     public boolean cantQuicesAprobados(){
         int c=0;
-        boolean p=false;
         for (int i = 0; i < notas.length; i++) {
-            if(this.notas[i]>=3.0f && this.notas[i]<=5.0f){
+            if(this.notas[i]>=3.0f && this.notas[i]<=5.0f && this.notas[i]!=0){
                 c++;
             }
         }

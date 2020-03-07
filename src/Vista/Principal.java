@@ -46,6 +46,7 @@ public class Principal extends javax.swing.JFrame {
         btnMetodo2 = new javax.swing.JButton();
         btnMetodo4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btnMetodo5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal-Sistema Notas");
@@ -102,6 +103,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnMetodo5.setText(" Metodo 5");
+        btnMetodo5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMetodo5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,7 +137,9 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(btnMetodo4))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnMostrarNotas)
-                        .addGap(611, 611, 611)))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMetodo5)
+                        .addGap(520, 520, 520)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -150,7 +160,9 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(btnMetodo4)
                             .addComponent(jButton1))))
                 .addGap(27, 27, 27)
-                .addComponent(btnMostrarNotas)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMostrarNotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMetodo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -185,6 +197,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMetodo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo4ActionPerformed
         // TODO add your handling code here:
+        this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.notaDefinitva());
     }//GEN-LAST:event_btnMetodo4ActionPerformed
 
@@ -192,6 +205,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         txtEntrada.setText(notas.mostrarCantQuices());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnMetodo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo5ActionPerformed
+        // TODO add your handling code here:
+        this.txtEntrada.setText(notas.quicesAprobados());
+    }//GEN-LAST:event_btnMetodo5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +251,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnMetodo1;
     private javax.swing.JButton btnMetodo2;
     private javax.swing.JButton btnMetodo4;
+    private javax.swing.JButton btnMetodo5;
     private javax.swing.JButton btnMostrarNotas;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

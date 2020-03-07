@@ -75,8 +75,9 @@ public class SistemaNotas {
     cantidad de quices que presento (forma ascendente)
     */
    public String mostrarCantQuices(){
-        Estudiante quices[] = organizarQuices();
+       
         String msg = "Cantidad De Quices Por Cada Estudiante\n";
+        Estudiante quices[] = organizarQuices();
         for (Estudiante quice : quices) {
             msg += quice.getCodigo() + " ---> ";
             for (int j = 0; j < quice.getNotas().length; j++) {
@@ -92,15 +93,11 @@ public class SistemaNotas {
    nota definitiva que obtuvieron de sus quices (forma descendente)
    */
    public String notaDefinitva(){
-       String msg="Nota Definitiva De los Estudiantes\n";
-       Estudiante prome[]=organizarPromedio();
-       for(Estudiante dato:prome){
-           msg+=dato.getNotas()+" --> ";
-           for(int i=0;i<dato.getNotas().length;i++){
-               msg+=dato.getNotas()[i]+"; ";
-           }
-           msg+="\n";
-       }
+       String msg="Nota Definitiva De los Estudiantes \n";
+       Estudiante promedios[]=organizarPromedio();
+        for (Estudiante promedio : promedios) {
+            msg += promedio.getCodigo() + " --> " + promedio.calcularPromedio() + "\n";
+        }
        return msg;
    }
    
