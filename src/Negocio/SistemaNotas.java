@@ -42,7 +42,7 @@ public class SistemaNotas {
     Metodo:
     1.Mostrar los codigos de los estudiantes que obtuvieron
     mayor promedio en el curso.
-     */
+    */
     public String promedio() {
         String msg;
         Estudiante prome[] = new Estudiante[this.estudiantes.length];
@@ -59,7 +59,7 @@ public class SistemaNotas {
     /*
     Metodo:
     2.Mostrar los codigos de los estudiantes que reprobaron su tercer parcial.
-     */
+    */
     public String reprobaron() {
         String msg = "Estudiantes Que Reprobaron Su Tercer Parcial\n";
         for (Estudiante dato : this.estudiantes) {
@@ -75,7 +75,7 @@ public class SistemaNotas {
     Metodo:
     3.Mostrar los estudiantes (codigo y notas) ordenados por la 
     cantidad de quices que presento (forma ascendente)
-     */
+    */
     public String mostrarCantQuices() {
 
         String msg = "Cantidad De Quices Por Cada Estudiante\n";
@@ -94,28 +94,28 @@ public class SistemaNotas {
    Metodo:
    4.Mostrar los estudiantes (codigo y nota definitiva) ordenados por la
    nota definitiva que obtuvieron de sus quices (forma descendente)
-     */
+    */
     public String notaDefinitva() {
         String msg = "Nota Definitiva De los Estudiantes \n";
         Estudiante promedios[] = organizarPromedio();
-        int i = promedios.length - 1;
-        for (Estudiante promedio : promedios) {
-            msg += promedio.getCodigo() + " --> " + promedios[i].calcularPromedio() + "\n";
-            i--;
+        for (int i = promedios.length-1; i>=0; i--) {
+             msg += promedios[i].getCodigo() + " --> " + promedios[i].calcularPromedio() + "\n";
         }
+           
         return msg;
     }
 
     /*
    Metodo:
    5.Mostrar los estudiantes (codgo y notas) que aprobaron todos sus quices
-     */
+    */
     public String quicesAprobados() {
-        String msg = "Estudiante Que Aprobaron Todos Los Quices\n8";
+        String msg = "Estudiante Que Aprobaron Todos Los Quices\n";
         for (Estudiante dato : this.estudiantes) {
             if (dato.cantQuicesAprobados()) {
-                msg += dato.toString() + "" + dato.calcularPromedio() + "\n";
+                msg += dato.toString() + "-->" + dato.calcularPromedio();
             }
+            msg+="\n";
         }
         return msg;
     }
