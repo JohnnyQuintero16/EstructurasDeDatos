@@ -182,16 +182,19 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMostrarNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarNotasActionPerformed
         // TODO add your handling code here:
+         this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.listarEstudiantes());
     }//GEN-LAST:event_btnMostrarNotasActionPerformed
 
     private void btnMetodo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo1ActionPerformed
         // TODO add your handling code here:
+         this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.promedio());
     }//GEN-LAST:event_btnMetodo1ActionPerformed
 
     private void btnMetodo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo2ActionPerformed
         // TODO add your handling code here:
+         this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.reprobaron());
     }//GEN-LAST:event_btnMetodo2ActionPerformed
 
@@ -203,11 +206,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         this.txtEntrada.setText(null);
         txtEntrada.setText(notas.mostrarCantQuices());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnMetodo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo5ActionPerformed
         // TODO add your handling code here:
+         this.txtEntrada.setText(null);
         this.txtEntrada.setText(notas.quicesAprobados());
     }//GEN-LAST:event_btnMetodo5ActionPerformed
 
