@@ -110,13 +110,14 @@ public class SistemaNotas {
    5.Mostrar los estudiantes (codgo y notas) que aprobaron todos sus quices
     */
     public String quicesAprobados() {
-        String msg = "Estudiante Que Aprobaron Todos Los Quices\n";
+        String msg = "Estudiante Que Aprobaron Todos Los Quices";
         for (Estudiante dato : this.estudiantes) {
             if (dato.cantQuicesAprobados()) {
-                msg += dato.toString() + "-->" + dato.calcularPromedio();
+                msg +="\n"+ dato.toString() + "-->" + dato.calcularPromedio();
             }
-            msg+="\n";
+            
         }
+       // msg+="\n";
         return msg;
     }
 
