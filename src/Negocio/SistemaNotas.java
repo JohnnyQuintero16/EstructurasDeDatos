@@ -117,7 +117,28 @@ public class SistemaNotas {
             }
             
         }
-       // msg+="\n";
+        return msg;
+    }
+    /*
+    Metodo 6:
+    conocer el promedio del curso
+    */
+    public String requerimiento6(){
+        String msg="El Promedio Total Del Curso de Estructuras De Datos Grupo A 2020-1\n";
+        int total=0;
+        float promedio=0;
+        for(Estudiante dato:estudiantes){
+            total+=dato.calcularPromedio();
+        }
+        promedio=total/estudiantes.length;
+        msg+="\n";
+        if(promedio>=0 && promedio<3){
+            msg+=promedio+" Promedio Insuficiente";
+        }else if(promedio>=3 && promedio<4){
+            msg+=promedio+" Promedio Suficiente";
+        }else if(promedio>=4 && promedio<=5){
+            msg+=+promedio+" Promedio Sobresaliente";
+        }
         return msg;
     }
 
