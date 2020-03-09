@@ -4,27 +4,28 @@
  * and open the template in the editor.
  */
 package Vista;
+
 import Negocio.SistemaNotas;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author madar
  */
 public class Principal extends javax.swing.JFrame {
-    
-    
-    private SistemaNotas notas=new SistemaNotas();
+
+    private SistemaNotas notas = new SistemaNotas();
 
     /**
      * Creates new form Principal
      */
     public Principal() {
-        
+
         initComponents();
         this.setLocationRelativeTo(null);
-          this.getContentPane().setBackground(Color.WHITE);
-          JOptionPane.showMessageDialog(null, "Recuerde que los datos de entrada deben estar separados por saltos de líneas y cada nota con el carácter ;", "Importante", JOptionPane.WARNING_MESSAGE);
+        this.getContentPane().setBackground(Color.WHITE);
+        JOptionPane.showMessageDialog(null, "Recuerde que los datos de entrada deben estar separados por saltos de líneas y cada nota con el carácter ;", "Importante", JOptionPane.WARNING_MESSAGE);
     }
 
     /**
@@ -189,8 +190,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnCargarNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarNotasActionPerformed
         // TODO add your handling code here:
-        
-        String misNotas=this.txtEntrada.getText();
+
+        String misNotas = this.txtEntrada.getText();
         notas.cargarNotas(misNotas);
         this.txtEntrada.setText("Notas Cargadas");
         this.btnMostrarNotas.setEnabled(true);
@@ -204,22 +205,22 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMostrarNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarNotasActionPerformed
         // TODO add your handling code here:
-         this.txtEntrada.setText(null);
+        this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.listarEstudiantes());
     }//GEN-LAST:event_btnMostrarNotasActionPerformed
 
     private void btnMetodo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo1ActionPerformed
         // TODO add your handling code here:
-         this.txtEntrada.setText(null);
+        this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.promedio());
     }//GEN-LAST:event_btnMetodo1ActionPerformed
 
     private void btnMetodo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo2ActionPerformed
         // TODO add your handling code here:
-         this.txtEntrada.setText(null);
+        this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.reprobaron());
     }//GEN-LAST:event_btnMetodo2ActionPerformed
-                
+
     private void btnMetodo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo4ActionPerformed
         // TODO add your handling code here:
         this.txtEntrada.setText(null);
@@ -228,13 +229,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMetodo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo3ActionPerformed
         // TODO add your handling code here:
-         this.txtEntrada.setText(null);
+        this.txtEntrada.setText(null);
         txtEntrada.setText(notas.mostrarCantQuices());
     }//GEN-LAST:event_btnMetodo3ActionPerformed
 
     private void btnMetodo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo5ActionPerformed
         // TODO add your handling code here:
-         this.txtEntrada.setText(null);
+        this.txtEntrada.setText(null);
         this.txtEntrada.setText(notas.quicesAprobados());
     }//GEN-LAST:event_btnMetodo5ActionPerformed
 
