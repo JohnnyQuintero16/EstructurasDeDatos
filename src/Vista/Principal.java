@@ -45,8 +45,9 @@ public class Principal extends javax.swing.JFrame {
         btnMetodo1 = new javax.swing.JButton();
         btnMetodo2 = new javax.swing.JButton();
         btnMetodo4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnMetodo3 = new javax.swing.JButton();
         btnMetodo5 = new javax.swing.JButton();
+        btnMetodo6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal-Sistema Notas");
@@ -75,38 +76,51 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/acme.jpg"))); // NOI18N
 
-        btnMetodo1.setText("Metodo 1");
+        btnMetodo1.setText("Requerimiento N°1");
+        btnMetodo1.setEnabled(false);
         btnMetodo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMetodo1ActionPerformed(evt);
             }
         });
 
-        btnMetodo2.setText("Metodo 2");
+        btnMetodo2.setText("Requerimiento N°2");
+        btnMetodo2.setEnabled(false);
         btnMetodo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMetodo2ActionPerformed(evt);
             }
         });
 
-        btnMetodo4.setText("Metodo 4");
+        btnMetodo4.setText("Requerimiento N°4");
+        btnMetodo4.setEnabled(false);
         btnMetodo4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMetodo4ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Metodo 3");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMetodo3.setText("Requerimiento N°3");
+        btnMetodo3.setEnabled(false);
+        btnMetodo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMetodo3ActionPerformed(evt);
             }
         });
 
-        btnMetodo5.setText(" Metodo 5");
+        btnMetodo5.setText("Requerimiento N°5");
+        btnMetodo5.setEnabled(false);
         btnMetodo5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMetodo5ActionPerformed(evt);
+            }
+        });
+
+        btnMetodo6.setText("Requerimiento N°6");
+        btnMetodo6.setEnabled(false);
+        btnMetodo6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMetodo6ActionPerformed(evt);
             }
         });
 
@@ -116,38 +130,40 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel1)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCargarNotas)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnMetodo1)
-                                .addGap(35, 35, 35)
-                                .addComponent(btnMetodo2)
-                                .addGap(34, 34, 34)
-                                .addComponent(jButton1)
+                                .addComponent(btnMetodo1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnMostrarNotas)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnMetodo4))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMostrarNotas)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMetodo5)
-                        .addGap(520, 520, 520)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                .addComponent(btnMetodo4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnMetodo2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnMetodo3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnMetodo5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnMetodo6)))))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,13 +173,15 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(btnCargarNotas)
                             .addComponent(btnMetodo1)
                             .addComponent(btnMetodo2)
-                            .addComponent(btnMetodo4)
-                            .addComponent(jButton1))))
+                            .addComponent(btnMetodo3)))
+                    .addComponent(jLabel1))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnMostrarNotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMetodo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMetodo5)
+                    .addComponent(btnMetodo6)
+                    .addComponent(btnMostrarNotas)
+                    .addComponent(btnMetodo4))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,8 +194,12 @@ public class Principal extends javax.swing.JFrame {
         notas.cargarNotas(misNotas);
         this.txtEntrada.setText("Notas Cargadas");
         this.btnMostrarNotas.setEnabled(true);
-        
-        
+        this.btnMetodo1.setEnabled(true);
+        this.btnMetodo2.setEnabled(true);
+        this.btnMetodo3.setEnabled(true);
+        this.btnMetodo4.setEnabled(true);
+        this.btnMetodo5.setEnabled(true);
+        this.btnMetodo6.setEnabled(true);
     }//GEN-LAST:event_btnCargarNotasActionPerformed
 
     private void btnMostrarNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarNotasActionPerformed
@@ -197,24 +219,29 @@ public class Principal extends javax.swing.JFrame {
          this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.reprobaron());
     }//GEN-LAST:event_btnMetodo2ActionPerformed
-
+                
     private void btnMetodo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo4ActionPerformed
         // TODO add your handling code here:
         this.txtEntrada.setText(null);
         this.txtEntrada.setText(this.notas.notaDefinitva());
     }//GEN-LAST:event_btnMetodo4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMetodo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo3ActionPerformed
         // TODO add your handling code here:
          this.txtEntrada.setText(null);
         txtEntrada.setText(notas.mostrarCantQuices());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMetodo3ActionPerformed
 
     private void btnMetodo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo5ActionPerformed
         // TODO add your handling code here:
          this.txtEntrada.setText(null);
         this.txtEntrada.setText(notas.quicesAprobados());
     }//GEN-LAST:event_btnMetodo5ActionPerformed
+
+    private void btnMetodo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMetodo6ActionPerformed
+        // TODO add your handling code here:
+        this.txtEntrada.setText(notas.requerimiento6());
+    }//GEN-LAST:event_btnMetodo6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,10 +282,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarNotas;
     private javax.swing.JButton btnMetodo1;
     private javax.swing.JButton btnMetodo2;
+    private javax.swing.JButton btnMetodo3;
     private javax.swing.JButton btnMetodo4;
     private javax.swing.JButton btnMetodo5;
+    private javax.swing.JButton btnMetodo6;
     private javax.swing.JButton btnMostrarNotas;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
